@@ -56,7 +56,7 @@ python train.py --experiment ABC --gpu 0
 Checkpoints are saved to `exp_log/ABC/ModelParameters/`. To resume training:
 
 ```bash
-python train.py --experiment ABC --gpu 0 --resume 500 --target-epochs 800
+python train.py --experiment ABC --gpu 0
 ```
 
 ### 2. Fine-tune a test shape
@@ -83,7 +83,7 @@ Results are written to:
 exp_log/ABC/Reconstructions/
 |-- CAD/   # CAD results (.brep and .stl)
 |-- MC/    # Marching Cubes meshes (.obj)
-`-- sk/    # Predicted 2D sketches
+`-- sk/    # Predicted 2D implicit sketches
 ```
 
 > **Important:** in the current release, `fine-tuning.py` and `test.py` use the input filename to identify an existing test model and load its precomputed features. Direct inference on an arbitrary new sketch requires an additional preprocessing pipeline for depth/normal prediction and DINO-V2 feature extraction.
